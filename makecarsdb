@@ -1,0 +1,39 @@
+#!/bin/bash
+
+sqlite3 ./cars93.db <<!
+.headers on
+drop table if exists Cars;
+create table Cars(
+id integer,
+manufacturer varchar(32),
+model varchar(32),
+type varchar(32),
+min_price integer,
+price integer,
+max_price integer,
+mpg_city integer,
+mpg_highway integer,
+airbags varchar(32),
+drivetrain varchar(32),
+cylinders integer,
+enginesize integer,
+horsepower integer,
+rpm integer,
+rev_per_mile integer,
+man_trans_avail varchar(32),
+fuel_tank_capacity real,
+passengers integer,
+length integer,
+wheelbase integer,
+width integer,
+turn_circle integer,
+rear_seat_room real,
+luggage_room integer,
+weight integer,
+origin varchar(32),
+make varchar(32));
+.separator ","
+.headers on
+.import "cars93.csv" Cars
+!
+echo "Wrote cars93.db"
