@@ -13,6 +13,8 @@ This application requires the following components:
 
 ## Installing on Ubuntu and Windows WSL
 
+Do the following to install the required software on Ubuntu and Windows WSL:
+
 1. Install the `Go` tools
 
     ```
@@ -31,9 +33,11 @@ This application requires the following components:
     ```
     $ go get github.com/gorilla/mux
     $ go get github.com/mattn/go-sqlite3
-    ```    
+    ```
 
 ## Installing on MacOS
+
+Do the following to install the required software on MacOS:
 
 1. Install the `Go` tools
 
@@ -52,17 +56,16 @@ This application requires the following components:
     ```
     $ go get github.com/gorilla/mux
     $ go get github.com/mattn/go-sqlite3
-    ```    
+    ```
 
 ## Creating the Database
 
 The repository contains a CSV file, which captures the data for the 93 cars. Use the `makecarsdb` script to create the cars93.db SQLite database file for the restful_sql program as follows:
 
-
 ```
-$ ./makecarsdb 
+$ ./makecarsdb
 Wrote cars93.db
-$ echo "select count(*) from Cars" | sqlite3 cars93.db 
+$ echo "select count(*) from Cars" | sqlite3 cars93.db
 93
 ```
 
